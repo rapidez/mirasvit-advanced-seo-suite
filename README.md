@@ -27,7 +27,7 @@ Just use `Template::content($model, $field)` as fallback. The first parameter is
 ```
 Or create an [accessor](https://laravel.com/docs/master/eloquent-mutators#defining-an-accessor) on the models for the meta title and description.
 
-## Autolinks
+### Autolinks
 
 Use `Rapidez\MirasvitAdvancedSeoSuite\Models\Autolink::replace($description)` where you want the autolinks for example on CMS pages, product- and category descriptions.
 
