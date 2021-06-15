@@ -9,7 +9,11 @@ class MirasvitSeoRedirects
 {
     public function handle($request, Closure $next)
     {
-        if ($redirect = Redirect::where('url_from', $request->path())->orWhere('url_from', '/'.$request->path())->first()) {
+        if ($redirect = Redirect::query()
+            ->where('url_from', $request->path())
+            ->orWhere('url_from', '/'.$request->path())
+            ->orderByDesc('redirect_id')
+            ->first()) {
             return redirect($redirect->url_to, $redirect->redirect_type);
         }
 
