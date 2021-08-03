@@ -2,9 +2,7 @@
 
 namespace Rapidez\MirasvitAdvancedSeoSuite\Models;
 
-use Rapidez\Core\Models\Category;
 use Rapidez\Core\Models\Model;
-use Rapidez\Core\Models\Product;
 use Rapidez\Core\Models\Scopes\IsActiveScope;
 use Rapidez\Core\RapidezFacade as Rapidez;
 
@@ -14,7 +12,7 @@ class Autolink extends Model
 
     protected static function booted()
     {
-        static::addGlobalScope(new IsActiveScope);
+        static::addGlobalScope(new IsActiveScope());
     }
 
     public static function replace(string $text): string

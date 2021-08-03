@@ -14,7 +14,7 @@ class Template extends Model
 
     protected static function booted()
     {
-        static::addGlobalScope(new IsActiveScope);
+        static::addGlobalScope(new IsActiveScope());
     }
 
     public static function content(Model $model, string $field)
@@ -22,7 +22,7 @@ class Template extends Model
         if ($model instanceof Product) {
             $type = 1;
             $replaces = [
-                '[product_name]' => $model->name,
+                '[product_name]'  => $model->name,
                 '[category_name]' => '',
             ];
         }
@@ -30,7 +30,7 @@ class Template extends Model
         if ($model instanceof Category) {
             $type = 2;
             $replaces = [
-                '[category_name]' => $model->name
+                '[category_name]' => $model->name,
             ];
         }
 
