@@ -12,7 +12,6 @@ class MirasvitSeoRedirects
         if ($redirect = Redirect::query()
             ->where('url_from', $request->path())
             ->orWhere('url_from', '/'.$request->path())
-            ->orderByDesc('redirect_id')
             ->first()) {
             return redirect($redirect->url_to, $redirect->redirect_type);
         }
