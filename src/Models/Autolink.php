@@ -2,9 +2,9 @@
 
 namespace Rapidez\MirasvitAdvancedSeoSuite\Models;
 
+use Rapidez\Core\Facades\Rapidez;
 use Rapidez\Core\Models\Model;
 use Rapidez\Core\Models\Scopes\IsActiveScope;
-use Rapidez\Core\Facades\Rapidez;
 
 class Autolink extends Model
 {

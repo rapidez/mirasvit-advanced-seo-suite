@@ -2,11 +2,11 @@
 
 namespace Rapidez\MirasvitAdvancedSeoSuite\Models;
 
+use Rapidez\Core\Facades\Rapidez;
 use Rapidez\Core\Models\Category;
 use Rapidez\Core\Models\Model;
 use Rapidez\Core\Models\Product;
 use Rapidez\Core\Models\Scopes\IsActiveScope;
-use Rapidez\Core\Facades\Rapidez;
 
 class Template extends Model
 {
