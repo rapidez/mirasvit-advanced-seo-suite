@@ -4,7 +4,7 @@ namespace Rapidez\MirasvitAdvancedSeoSuite\Models;
 
 use Rapidez\Core\Models\Model;
 use Rapidez\Core\Models\Scopes\IsActiveScope;
-use Rapidez\Core\RapidezFacade as Rapidez;
+use Rapidez\Core\Facades\Rapidez;
 
 class Autolink extends Model
 {
