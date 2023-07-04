@@ -20,7 +20,7 @@ class Autolink extends Model
         $limit = Rapidez::config('seoautolink/autolink/links_limit_per_page', false);
         $counter = 0;
         self::all()->each(function ($autolink) use (&$text, &$counter, $limit) {
-            $url = to($autolink->url);
+            $url = url($autolink->url);
             $link = " <a href=\"$url\" target=\"$autolink->url_target\" title=\"$autolink->url_title\">$autolink->keyword</a> ";
             $text = preg_replace('/ '.$autolink->keyword.' (?!([^<]+)?>)/i', $link, $text, -1, $count);
             $counter += $count;
