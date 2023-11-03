@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/mirasvit-advanced-seo-suite/compare/0.2.2...master)
+[Unreleased changes](https://github.com/rapidez/mirasvit-advanced-seo-suite/compare/0.3.0...master)
+## [0.3.0](https://github.com/rapidez/mirasvit-advanced-seo-suite/releases/tag/0.3.0) - 2023-11-03
+
+### Added
+
+- Laravel 10 & PHP 8.2 support (#5)
+
 ## [0.2.2](https://github.com/rapidez/mirasvit-advanced-seo-suite/releases/tag/0.2.2) - 2023-07-04
 
 ### Fixed
