@@ -68,6 +68,6 @@ class Template extends Model
             $model instanceof Category => str_replace('category_', '', $replaceKey)
         };
 
-        return $model->{str_replace(['[', ']'], '', $replace)} ?? null;
+        return $model->attributesToArray()[str_replace(['[', ']'], '', $replace)] ?? null;
     }
 }
