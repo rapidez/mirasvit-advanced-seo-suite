@@ -19,26 +19,19 @@ class Template extends Model
 
     public static function content(Model $model, string $field)
     {
-        if ($model instanceof Product) {
-            $type = 1;
-            $replaces = [
-                '[product_name]'  => $model->name,
-                '[category_name]' => '',
-            ];
-        }
+        $type = self::getModelType($model);
 
-        if ($model instanceof Category) {
-            $type = 2;
-            $replaces = [
-                '[category_name]' => $model->name,
-            ];
-        }
-
-        if (!isset($type)) {
+        if (!$type) {
             return;
         }
 
         $value = optional(self::firstWhere('rule_type', $type))->{$field};
+
+        $replaces = [];
+        foreach (self::getReplaceKeys($value) as $key) {
+            $replaces[$key] = self::getReplaceValue($model, $key);
+        }
+
         $value = strtr($value, array_merge($replaces ?? [], [
             '[store_name]'          => Rapidez::config('general/store_information/name'),
             '[store_phone]'         => Rapidez::config('general/store_information/phone'),
@@ -46,10 +39,32 @@ class Template extends Model
             '[store_street_line_1]' => Rapidez::config('general/store_information/street_line1'),
             '[store_street_line_2]' => Rapidez::config('general/store_information/street_line2'),
             '[store_city]'          => Rapidez::config('general/store_information/city'),
-            '[store_postcode]'      => Rapidez::config('general/store_information/postcode'),
+            '[store_postcode]'      => Rapidez::config('general/store_information/postcode')
         ]));
 
         // Remove double spaces
         return preg_replace('/\s+/', ' ', $value);
+    }
+
+    protected static function getModelType(Model $model) {
+        return match (true) {
+            $model instanceof Product => 1,
+            $model instanceof Category => 2
+        };
+    }
+
+    protected static function getReplaceKeys(string $value) {
+        preg_match_all('/\[(.*?)\]/', $value, $matches);
+
+        return $matches[0];
+    }
+
+    protected static function getReplaceValue(Model $model, string $replaceKey) {
+        $replace = match (true) {
+            $model instanceof Product => str_replace('product_', '', $replaceKey),
+            $model instanceof Category => str_replace('category_', '', $replaceKey)
+        };
+
+        return $model->{str_replace(['[', ']'], '', $replace)} ?? null;
     }
 }
