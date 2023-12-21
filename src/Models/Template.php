@@ -39,29 +39,32 @@ class Template extends Model
             '[store_street_line_1]' => Rapidez::config('general/store_information/street_line1'),
             '[store_street_line_2]' => Rapidez::config('general/store_information/street_line2'),
             '[store_city]'          => Rapidez::config('general/store_information/city'),
-            '[store_postcode]'      => Rapidez::config('general/store_information/postcode')
+            '[store_postcode]'      => Rapidez::config('general/store_information/postcode'),
         ]));
 
         // Remove double spaces
         return preg_replace('/\s+/', ' ', $value);
     }
 
-    protected static function getModelType(Model $model) {
+    protected static function getModelType(Model $model)
+    {
         return match (true) {
-            $model instanceof Product => 1,
+            $model instanceof Product  => 1,
             $model instanceof Category => 2
         };
     }
 
-    protected static function getReplaceKeys(string $value) {
+    protected static function getReplaceKeys(string $value)
+    {
         preg_match_all('/\[(.*?)\]/', $value, $matches);
 
         return $matches[0];
     }
 
-    protected static function getReplaceValue(Model $model, string $replaceKey) {
+    protected static function getReplaceValue(Model $model, string $replaceKey)
+    {
         $replace = match (true) {
-            $model instanceof Product => str_replace('product_', '', $replaceKey),
+            $model instanceof Product  => str_replace('product_', '', $replaceKey),
             $model instanceof Category => str_replace('category_', '', $replaceKey)
         };
 
