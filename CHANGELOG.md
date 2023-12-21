@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/mirasvit-advanced-seo-suite/compare/0.4.0...master)
+[Unreleased changes](https://github.com/rapidez/mirasvit-advanced-seo-suite/compare/0.4.1...master)
+## [0.4.1](https://github.com/rapidez/mirasvit-advanced-seo-suite/releases/tag/0.4.1) - 2023-12-21
+
+### Fixed
+
+- Refactor code to access fields securely (#7)
+
 ## [0.4.0](https://github.com/rapidez/mirasvit-advanced-seo-suite/releases/tag/0.4.0) - 2023-12-21
 
 ### Changed
