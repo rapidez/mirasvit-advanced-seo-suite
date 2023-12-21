@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/mirasvit-advanced-seo-suite/compare/0.3.0...master)
+[Unreleased changes](https://github.com/rapidez/mirasvit-advanced-seo-suite/compare/0.4.0...master)
+## [0.4.0](https://github.com/rapidez/mirasvit-advanced-seo-suite/releases/tag/0.4.0) - 2023-12-21
+
+### Changed
+
+- Replace all given product attributes (#6)
+
 ## [0.3.0](https://github.com/rapidez/mirasvit-advanced-seo-suite/releases/tag/0.3.0) - 2023-11-03
 
 ### Added
