@@ -1,6 +1,13 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/mirasvit-advanced-seo-suite/compare/1.0.0...master)
+[Unreleased changes](https://github.com/rapidez/mirasvit-advanced-seo-suite/compare/1.0.1...master)
+## [1.0.1](https://github.com/rapidez/mirasvit-advanced-seo-suite/releases/tag/1.0.1) - 2024-03-11
+
+### Fixed
+
+-  Fix error on empty replace value (#9)
+
+
 ## [1.0.0](https://github.com/rapidez/mirasvit-advanced-seo-suite/releases/tag/1.0.0) - 2024-03-05
 
 ### Added
