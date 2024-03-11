@@ -27,10 +27,6 @@ class Template extends Model
 
         $value = optional(self::firstWhere('rule_type', $type))->{$field};
 
-        if (!$value) {
-            return;
-        }
-
         $replaces = [];
         foreach (self::getReplaceKeys((string)$value) as $key) {
             $replaces[$key] = self::getReplaceValue($model, $key);
