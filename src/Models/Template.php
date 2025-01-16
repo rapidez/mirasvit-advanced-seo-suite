@@ -6,6 +6,7 @@ use Rapidez\Core\Facades\Rapidez;
 use Rapidez\Core\Models\Category;
 use Rapidez\Core\Models\Model;
 use Rapidez\Core\Models\Product;
+use Rapidez\Core\Models\Scopes\ForCurrentStoreWithoutLimitScope;
 use Rapidez\Core\Models\Scopes\IsActiveScope;
 
 class Template extends Model
@@ -15,6 +16,7 @@ class Template extends Model
     protected static function booted()
     {
         static::addGlobalScope(new IsActiveScope());
+        static::addGlobalScope(new ForCurrentStoreWithoutLimitScope('template_id', 'store_ids'));
     }
 
     public static function content(Model $model, string $field)
