@@ -1,6 +1,22 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/mirasvit-advanced-seo-suite/compare/1.0.1...master)
+[Unreleased changes](https://github.com/rapidez/mirasvit-advanced-seo-suite/compare/3.0.0...master)
+## [3.0.0](https://github.com/rapidez/mirasvit-advanced-seo-suite/releases/tag/3.0.0) - 2025-01-21
+
+### Added
+
+- Rapidez v3 support (6f15530)
+
+### Fixed
+
+- Template store id check (#11)
+
+## [1.1.0](https://github.com/rapidez/mirasvit-advanced-seo-suite/releases/tag/1.1.0) - 2024-07-15
+
+### Added
+
+- Laravel 11 support (#10)
+
 ## [1.0.1](https://github.com/rapidez/mirasvit-advanced-seo-suite/releases/tag/1.0.1) - 2024-03-11
 
 ### Fixed
