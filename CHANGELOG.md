@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/mirasvit-advanced-seo-suite/compare/3.0.0...master)
+[Unreleased changes](https://github.com/rapidez/mirasvit-advanced-seo-suite/compare/4.0.0...4.0.0)
+## [4.0.0](https://github.com/rapidez/mirasvit-advanced-seo-suite/releases/tag/4.0.0) - 2025-09-15
+
+### Added
+
+- Rapidez v4 support (#12)
+
 ## [3.0.0](https://github.com/rapidez/mirasvit-advanced-seo-suite/releases/tag/3.0.0) - 2025-01-21
 
 ### Added
