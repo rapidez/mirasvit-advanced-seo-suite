@@ -72,11 +72,11 @@ class Autolink extends Model
         $globalRemaining = $globalLimit > -1 ? max($globalLimit - $counter, 0) : -1;
 
         return match (true) {
-            $globalRemaining === 0 => 0,
+            $globalRemaining === 0                      => 0,
             $globalRemaining > -1 && $keywordLimit > -1 => min($globalRemaining, $keywordLimit),
-            $globalRemaining > -1 => $globalRemaining,
-            $keywordLimit > -1 => $keywordLimit,
-            default => -1,
+            $globalRemaining > -1                       => $globalRemaining,
+            $keywordLimit > -1                          => $keywordLimit,
+            default                                     => -1,
         };
     }
 }
