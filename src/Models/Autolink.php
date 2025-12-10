@@ -17,16 +17,20 @@ class Autolink extends Model
 
     public static function replace(string $text): string
     {
-        $limit = Rapidez::config('seoautolink/autolink/links_limit_per_page', false);
+        $limit = (int) Rapidez::config('seoautolink/autolink/links_limit_per_page', -1);
         $counter = 0;
+
         self::all()->each(function ($autolink) use (&$text, &$counter, $limit) {
             $url = url($autolink->url);
             $link = " <a href=\"$url\" target=\"$autolink->url_target\" title=\"$autolink->url_title\">$autolink->keyword</a> ";
-            $text = preg_replace('/ '.$autolink->keyword.' (?!([^<]+)?>)/i', $link, $text, -1, $count);
-            $counter += $count;
-            if ($limit && $counter > $limit) {
+
+            if ($limit > -1 && $counter >= $limit) {
                 return false;
             }
+
+            $remaining = $limit > -1 ? max($limit - $counter, 0) : -1;
+            $text = preg_replace('/ '.$autolink->keyword.' (?!([^<]+)?>)/i', $link, $text, $remaining, $count);
+            $counter += $count;
         });
 
         return $text;
