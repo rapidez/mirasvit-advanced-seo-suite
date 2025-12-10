@@ -1,6 +1,13 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/mirasvit-advanced-seo-suite/compare/4.0.0...4.0.0)
+[Unreleased changes](https://github.com/rapidez/mirasvit-advanced-seo-suite/compare/5.0.0...5.0.0)
+## [5.0.0](https://github.com/rapidez/mirasvit-advanced-seo-suite/releases/tag/5.0.0) - 2025-12-10
+
+### Added
+
+- Rapidez v5 support (34129ba)
+- Implemented autolink limits and duplicate URL prevention (#13)
+
 ## [4.0.0](https://github.com/rapidez/mirasvit-advanced-seo-suite/releases/tag/4.0.0) - 2025-09-15
 
 ### Added
